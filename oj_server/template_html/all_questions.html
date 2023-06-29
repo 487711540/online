@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线OJ-题目列表</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f6f6f6;
+        }
+
+        .container .navbar {
+            width: 100%;
+            height: 70px;
+            background-color: #2c3e50;
+            overflow: hidden;
+            padding: 0 15px;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container .navbar a {
+            display: inline-block;
+            width: 80px;
+            color: #ecf0f1;
+            font-size: large;
+            line-height: 70px;
+            text-decoration: none;
+            text-align: center;
+            transition: color 0.3s ease;
+        }
+
+        .container .navbar a:hover {
+            color: #3498db;
+        }
+
+        .container .navbar .login {
+            float: right;
+        }
+
+        .container .question_list {
+            padding-top: 50px;
+            width: 80%;
+            height: auto;
+            margin: 0px auto;
+            text-align: center;
+            padding-bottom: 70px;  /* 添加底部填充 */
+        }
+
+        .container .question_list h1 {
+            color: #34495e;
+            margin-bottom: 30px;
+        }
+
+        .container .question_list table {
+            width: 100%;
+            font-size: 16px;
+            margin-top: 50px;
+            background-color: #ecf0f1;
+            box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
+        }
+
+        .container .question_list table th, .container .question_list table td {
+            padding: 15px;
+            text-align: left;
+        }
+
+        .container .question_list table .item {
+            font-size: large;
+        }
+
+        .container .question_list table .item a {
+            text-decoration: none;
+            color: #34495e;
+            transition: color 0.3s ease;
+        }
+
+        .container .question_list table .item a:hover {
+
+ color: #3498db;
+        text-decoration: underline;
+    }
+
+    .container .footer {
+        position: fixed;  /* 设为固定位置 */
+        bottom: 0;  /* 放在屏幕底部 */
+        width: 100%;
+        height: 70px;
+        text-align: center;
+        line-height: 70px;
+        color: #bdc3c7;
+        background-color: #2c3e50;
+        box-shadow: 0px -1px 10px rgba(0, 0, 0, 0.1);
+        font-size: 14px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="/">首页</a>
+            <a href="/all_questions">题库</a>
+            <a href="#">竞赛</a>
+            <a href="#">讨论</a>
+            <a href="#">求职</a>
+            <a class="login" href="#">登录</a>
+        </div>
+        <div class="question_list">
+            <h1>OnlineJuge题目列表</h1>
+            <table>
+                <tr>
+                    <th class="item">编号</th>
+                    <th class="item">标题</th>
+                    <th class="item">难度</th>
+                </tr>
+                {{#question_list}}
+                <tr>
+                    <td class="item">{{number}}</td>
+                    <td class="item"><a href="/question/{{number}}">{{title}}</a></td>
+                    <td class="item">{{star}}</td>
+                </tr>
+                {{/question_list}}
+            </table>
+        </div>
+        <div class="footer">
+            <h4>@yilin li</h4>
+        </div>
+    </div>
+</body>
+</html>

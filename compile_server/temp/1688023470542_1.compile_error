@@ -1,0 +1,23 @@
+./temp/1688023470542_1.cpp: In function ‘void Test1()’:
+./temp/1688023470542_1.cpp:11:13: error: ‘Solution’ was not declared in this scope
+    bool ret=Solution().isPalindrome(121);
+             ^~~~~~~~
+./temp/1688023470542_1.cpp:11:13: note: suggested alternative: ‘union’
+    bool ret=Solution().isPalindrome(121);
+             ^~~~~~~~
+             union
+./temp/1688023470542_1.cpp: In function ‘void Test2()’:
+./temp/1688023470542_1.cpp:23:15: error: ‘Solution’ was not declared in this scope
+      bool ret=Solution().isPalindrome(-10);
+               ^~~~~~~~
+./temp/1688023470542_1.cpp:23:15: note: suggested alternative: ‘union’
+      bool ret=Solution().isPalindrome(-10);
+               ^~~~~~~~
+               union
+./temp/1688023470542_1.cpp: At global scope:
+./temp/1688023470542_1.cpp:36:5: error: redefinition of ‘int main()’
+ int main()
+     ^~~~
+./temp/1688023470542_1.cpp:2:6: note: ‘int main()’ previously defined here
+  int main(){while(1);std::cout<<"hello!!!!!!!"<<std::endl;}
+      ^~~~

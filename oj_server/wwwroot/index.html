@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 导入 Bootstrap 的 CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- 导入 Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <!-- 导入 Font Awesome 图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        html, body {
+            height: 100%;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(180deg, #020024 0%, #090979 35%, #00d4ff 100%);
+            color: #ffffff;
+        }
+        .wrapper {
+            min-height: 100%;
+            position: relative;
+            padding-bottom: 80px;
+        }
+        .navbar-dark .navbar-brand {
+            font-size: 1.5rem;
+            color: #00d4ff;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 80px;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .navbar-dark .navbar-nav .nav-link {
+            color: #00d4ff;
+        }
+        .btn-primary {
+            background-color: #00d4ff;
+            border-color: #00d4ff;
+        }
+        .btn-primary:hover {
+            background-color: #0080ff;
+            border-color: #0080ff;
+        }
+        h1, .lead {
+            animation: fadeInDown 1s;
+        }
+        .btn {
+            animation: fadeInUp 1s;
+        }
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+    <title>这是我的个人OJ系统</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- 使用 Bootstrap 的导航栏 -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <a class="navbar-brand" href="/"><i class="fas fa-code"></i> 首页</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="questionsDropdown" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">题库</a>
+                        <div class="dropdown-menu" aria-labelledby="questionsDropdown">
+                            <a class="dropdown-item" href="/all_questions">所有问题</a>
+                            <!-- 添加其他题库分类链接 -->
+                        </div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-trophy"></i> 竞赛</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-comments"></i> 讨论</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-briefcase"></i> 求职</a></li>
+                </ul>
+                <a class="btn btn-success my-2 my-sm-0" href="#"><i class="fas fa-sign-in-alt"></i> 登录</a>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <div class="container mt-5">
+            <h1 class="text-center">欢迎来到我的OnlineJudge平台</h1>
+            <p class="lead text-center">这是我个人独立开发的一个在线OJ平台</p>
+            <div class="text-center">
+                <a class="btn btn-primary" href="/all_questions"><i class="fas fa-play"></i> 点击我开始编程啦!</a>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="footer text-white text-center py-3">
+            <p>&copy; 2023 我的OJ系统 | All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- 引入 Bootstrap 的 JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

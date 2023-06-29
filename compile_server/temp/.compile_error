@@ -1,0 +1,6 @@
+./temp/.cpp:1:19: warning: extra tokens at end of #include directive [enabled by default]
+ #include<iostream>\n int main(){\n std::cout<<"can you see me?"<< std::endl ;\n return 0;}
+                   ^
+/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o: In function `_start':
+(.text+0x20): undefined reference to `main'
+collect2: error: ld returned 1 exit status

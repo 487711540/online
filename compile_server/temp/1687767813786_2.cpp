@@ -1,0 +1,2 @@
+#include<iostream>
+ int main(){while(1);std::cout<<"hello!!!!!!!"<<std::endl;}

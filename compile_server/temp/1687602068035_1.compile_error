@@ -1,0 +1,7 @@
+./temp/1687602068035_1.cpp: In function ‘int main()’:
+./temp/1687602068035_1.cpp:4:15: error: ‘a’ was not declared in this scope
+      while(1);a
+               ^
+./temp/1687602068035_1.cpp:5:5: error: expected ‘;’ before ‘return’
+     return 0;
+     ^
