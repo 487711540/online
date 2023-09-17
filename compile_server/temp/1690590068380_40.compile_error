@@ -1,0 +1,11 @@
+./temp/1690590068380_40.cpp: In member function ‘bool Solution::isPalindrome(int)’:
+./temp/1690590068380_40.cpp:12:8: error: ‘n’ was not declared in this scope
+     if(n==-10)return flase;
+        ^
+./temp/1690590068380_40.cpp:12:22: error: ‘flase’ was not declared in this scope
+     if(n==-10)return flase;
+                      ^~~~~
+./temp/1690590068380_40.cpp:12:22: note: suggested alternative: ‘fclose’
+     if(n==-10)return flase;
+                      ^~~~~
+                      fclose

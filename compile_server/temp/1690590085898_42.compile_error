@@ -1,0 +1,4 @@
+./temp/1690590085898_42.cpp: In member function ‘bool Solution::isPalindrome(int)’:
+./temp/1690590085898_42.cpp:12:8: error: ‘n’ was not declared in this scope
+     if(n==-10)return false;
+        ^

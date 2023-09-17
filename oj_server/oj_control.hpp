@@ -53,6 +53,12 @@ namespace ns_control
             if (mtx)
                 mtx->unlock();
         }
+        void RestLoad()
+        {
+            if(mtx)mtx->lock();
+            load=0;
+            if(mtx)mtx->unlock();
+        }
         uint64_t Load()
         {
             uint64_t _load = 0;
@@ -142,7 +148,7 @@ namespace ns_control
             {
                 uint64_t curr_load = machines[online[i]].Load();
                 if (min_load > curr_load)
-                    ;
+                    
                 {
                     min_load = curr_load;
                     *id = online[i];
@@ -159,6 +165,7 @@ namespace ns_control
             {
                 if (*iter == which)
                 {
+                    machines[which].RestLoad();
                     // 已经找到要离线的主机
                     online.erase(iter);
                     offline.push_back(which);
@@ -170,6 +177,12 @@ namespace ns_control
         void OnlineMachine()
         {
             // 统一上线
+             mtx.lock();
+            online.insert(online.end(), offline.begin(), offline.end());
+            offline.erase(offline.begin(), offline.end());
+            mtx.unlock();
+
+            LOG(INFO) << "所有的主机有上线啦!" << "\n";
         }
         // test
         void ShowMachine()
@@ -202,11 +215,18 @@ namespace ns_control
 
     public:
         // 跟据题目数据构建网页
+          void RecoveryMachine()
+        {
+            load_balance_.OnlineMachine();
+        }
         bool AllQuestions(string *html)
         {
             vector<struct Question> all;
             if (model_.GetAllQuetions(&all))
             {
+                sort(all.begin(),all.end(),[](const struct Question &q1,const struct Question &q2){
+                    return atoi(q1.number.c_str())<atoi(q2.number.c_str());
+                });
                 view_.AllExpandHtml(all, html);
             }
             else
@@ -269,10 +289,11 @@ namespace ns_control
                     std::cout<<"选择失败"<<endl;
                     break;
                 }
-                LOG(INFO) << "选择主机成功，主机id" << id << "详情" << m->ip << ":" << m->port << "port" << endl;
+              
                 // 发起http请求得到结果
                 Client cli(m->ip, m->port);
                 m->IncLoad();
+                LOG(INFO) << "选择主机成功，主机id" << id << "详情" << m->ip << ":" << m->port <<"当前主机的负载是"<<m->load<< "port" << endl;
                 if (auto res = cli.Post("/compile_and_run", compile_string, "application/json;charset=utf-8"))
                 {
                     if (res->status == 200)

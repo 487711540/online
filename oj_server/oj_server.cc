@@ -1,14 +1,23 @@
 #include<iostream>
+#include<signal.h>
 #include"../common/httplib.h"
 #include"oj_control.hpp"
 #include"oj_model.hpp"
 
 using namespace httplib;
 using namespace ns_control;
-
+static Control *ctrl_ptr=nullptr;
+ 
+void Recovery(int signo)
+{
+    ctrl_ptr->RecoveryMachine();
+}
 int main(){
+    
+    signal(SIGQUIT,Recovery);
     Server svr;
-    Control ctrl;
+   Control ctrl;
+   ctrl_ptr=&ctrl;
 //获取所有题目列表
     svr.Get("/all_questions",[&ctrl](const Request &req,Response &resp){
         std::string html;

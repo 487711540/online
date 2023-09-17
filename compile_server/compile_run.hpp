@@ -15,6 +15,7 @@ namespace ns_compile_and_run
    using namespace ns_compiler;
    static void RemoveTempFile(const std::string &file_name )
    {
+       std::cout<<"success";
         //清理文件的个数是不确定的，但是有哪些我们是知道的
             std::string _src = PathUtil::Src(file_name);
             if(FileUtil::IsFileExists(_src)) unlink(_src.c_str());
@@ -90,11 +91,10 @@ namespace ns_compile_and_run
          }
          return desc;
       }
-      static std::string SignoToDesc(int signo)
-      {
-      }
+     
       static void Start(const std::string &in_json, std::string *out_json)
       {
+         //解析json串
          Json::Value in_value;
          Json::Reader reader;
          reader.parse(in_json, in_value);
@@ -167,7 +167,7 @@ namespace ns_compile_and_run
          Json::StyledWriter writer;
          *out_json = writer.write(out_value);
 
-         //RemoveTempFile(file_name);
+         RemoveTempFile(file_name);
       }
    };
 }

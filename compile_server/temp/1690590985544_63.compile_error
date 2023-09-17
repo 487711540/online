@@ -1,0 +1,3 @@
+./temp/1690590985544_63.cpp:13:16: warning: integer constant is too large for its type
+         malloc(10000000000000000000000000);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~

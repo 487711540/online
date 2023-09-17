@@ -1,0 +1,4 @@
+./temp/1690588216644_33.cpp: In member function ‘bool Solution::isPalindrome(int)’:
+./temp/1690588216644_33.cpp:19:15: error: ‘n’ was not declared in this scope
+     return m==n;
+               ^
